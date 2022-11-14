@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - npm install -g typescript
+  pre_build:
+    commands:
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run build
+      - npm prune --production
+  post_build:
+    commands:
+      - echo Build Complete!
+artifacts:
+  files:
+    - dist/*/
+    - package.json
+    - node_modules/*/
