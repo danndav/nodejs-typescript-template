@@ -11,12 +11,11 @@ phases:
     commands:
       - echo Build started on `date`
       - npm run build
-      - npm prune --production
   post_build:
     commands:
       - echo Build Complete!
 artifacts:
   files:
-    - dist/*/
+    - dist/**/*
     - package.json
-    - node_modules/*/
+    - node_modules/**/*
